@@ -1,0 +1,204 @@
+# Archivo .gitignore para proyecto Docker PostgreSQL
+# Creado siguiendo las mejores prácticas
+
+# =================================================================
+# Variables de entorno y configuración sensible
+# =================================================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Archivos de secretos
+secrets.yml
+secrets.yaml
+.secrets
+
+# IMPORTANTE: El archivo .env.example SÍ debe estar en el repositorio
+!.env.example
+
+# =================================================================
+# Datos de PostgreSQL
+# =================================================================
+# Directorio de datos de PostgreSQL (generado automáticamente)
+postgres_data/
+pgdata/
+data/
+
+# Archivos de log de PostgreSQL
+*.log
+logs/
+log/
+
+# Archivos de backup temporales
+*.sql.backup
+*.sql.bak
+*.dump
+backup/
+backups/
+
+# Archivos de configuración temporal de PostgreSQL
+postgresql.auto.conf.backup
+pg_hba.conf.backup
+pg_ident.conf.backup
+
+# =================================================================
+# Docker
+# =================================================================
+# Archivos de Docker temporales
+.dockerignore.tmp
+docker-compose.override.yml
+docker-compose.prod.yml
+docker-compose.dev.yml
+
+# =================================================================
+# Sistema operativo
+# =================================================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# =================================================================
+# Editores de código
+# =================================================================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =================================================================
+# Archivos temporales y de sistema
+# =================================================================
+# Archivos temporales
+*.tmp
+*.temp
+.tmp/
+.temp/
+tmp/
+temp/
+
+# Archivos de caché
+.cache/
+cache/
+
+# Archivos de PID
+*.pid
+
+# =================================================================
+# Desarrollo y herramientas
+# =================================================================
+# Node.js (si se usa para scripts auxiliares)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (si se usan scripts de Python)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# SSL/TLS certificados
+*.key
+*.crt
+*.pem
+*.p12
+*.pfx
+certs/
+certificates/
+
+# =================================================================
+# Archivos de documentación temporal
+# =================================================================
+# Archivos de documentación generados
+docs/build/
+site/
+
+# =================================================================
+# Archivos específicos del proyecto
+# =================================================================
+# Archivos de configuración de usuario específicos
+config.local.yml
+config.local.yaml
+user-config.*
+
+# Scripts de desarrollo locales
+scripts/local/
+local-scripts/
+
+# Archivos de prueba temporales (mantener los scripts de init)
+test-data/
+test.sql
+testing/
+
+# Archivos de monitoreo y métricas
+metrics/
+monitoring/
+
+# =================================================================
+# Archivos que SÍ deben incluirse (comentarios de referencia)
+# =================================================================
+# Los siguientes archivos SÍ deben estar en el repositorio:
+# - docker-compose.yml
+# - .env.example
+# - init-scripts/
+# - postgres-conf/
+# - README*.md
+# - LICENSE
+# - .gitignore (este archivo)
+
+# =================================================================
+# Exclusiones específicas (casos especiales)
+# =================================================================
+# Si necesitas incluir algún archivo específico que coincida con los patrones anteriores,
+# puedes usar el operador ! para excluirlo de la regla:
+# !important-file.env
+# !docs/important.log
